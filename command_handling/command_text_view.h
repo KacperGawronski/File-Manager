@@ -2,7 +2,7 @@
 	Copyright 2018 Kacper Gawroński.
 
 	This file, and all files created by Kacper Gawroński in project
-	File-Manager, are licensed under GNU General Public License.
+	File-Manager, are licensed under GNU General Public License v3.
 
     File-Manager is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
