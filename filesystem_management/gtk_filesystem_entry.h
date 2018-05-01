@@ -25,9 +25,16 @@
 #include <vector>
 #include <string>
 
+/*
+ *
+ * OS version should contain FileSystemEntriesView implementation.
+ * It should also contain model columns for Gtk::TreeView and
+ * definition of OS_SPECIFIC_FILESYSTEM_ENTRY_TYPE type
+ * which is used for adding rows to TreeView from this type variables.
+ * 
+ */
 
 #ifdef __linux__
-#define OS_SPECIFIC_FILESYSTEM_ENTRY_TYPE FilesystemManagement::LinuxFilesystemEntry
 #include "linux/linux_includes.h"
 #else
 #error Not implemented

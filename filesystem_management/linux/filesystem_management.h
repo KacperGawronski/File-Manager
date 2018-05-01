@@ -30,7 +30,7 @@
 #ifdef __linux__
 	#include "linux_includes.h"
 	#define OS_INFO_TYPE struct stat
-
+	#define OS_SPECIFIC_FILESYSTEM_ENTRY_TYPE FilesystemManagement::LinuxFilesystemEntry
 namespace FilesystemManagement{
 	
 	#define FILESYSTEM_ENTRY_TYPE LinuxFilesystemEntry
