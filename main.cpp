@@ -25,7 +25,11 @@
 #include "filesystem_management/gtk_filesystem_entry.h"
 #include "command_handling/command_button.h"
 #include "command_handling/command_text_view.h"
+<<<<<<< HEAD
 #include "actions/actions_grid.h"
+=======
+
+>>>>>>> origin/master
 
 
 
@@ -33,9 +37,12 @@ class MainWindowContent_FileManager:public Gtk::Grid{
 	private:
 		FileSystemEntriesView *left_list;
 		FileSystemEntriesView *right_list;
+<<<<<<< HEAD
 		
 		ActionsGrid *actions_grid;
 		
+=======
+>>>>>>> origin/master
 		Gtk::Entry left_path_entry;
 		Gtk::Entry right_path_entry;
 		
@@ -46,7 +53,11 @@ class MainWindowContent_FileManager:public Gtk::Grid{
 		Command_Button *load_right_command_button;
 		
 		const gint list_height=6;
+<<<<<<< HEAD
 		const gint list_width=16;
+=======
+		const gint list_width=8;
+>>>>>>> origin/master
 		const gint actions_height=1;
 		const gint console_height=3;
 		gint current_height;
@@ -57,12 +68,19 @@ class MainWindowContent_FileManager:public Gtk::Grid{
 			/*
 			FileSystemEntriesView are objects to list entries from path.
 			They get values using get_list_from_path.
+<<<<<<< HEAD
 			*/
 			left_list=new FileSystemEntriesView(&left_path_entry);
 			right_list=new FileSystemEntriesView(&right_path_entry);
 			
 			actions_grid=new ActionsGrid(left_path_entry,right_path_entry,*left_list,*right_list);
 			
+=======
+			
+			*/
+			left_list=new FileSystemEntriesView(&left_path_entry);
+			right_list=new FileSystemEntriesView(&right_path_entry);
+>>>>>>> origin/master
 			load_left_command_button=new Command_Button(left_command_entry.get_buffer(),command_results.get_buffer(),left_path_entry.get_buffer(),left_list,right_list);
 			load_right_command_button=new Command_Button(right_command_entry.get_buffer(),command_results.get_buffer(),right_path_entry.get_buffer(),left_list,right_list);
 			left_path_entry.set_text("/home/");
@@ -78,7 +96,11 @@ class MainWindowContent_FileManager:public Gtk::Grid{
 			current_height+=actions_height;
 			
 			this->attach(*left_list,0,current_height,list_width-1,list_height);
+<<<<<<< HEAD
 			this->attach(*actions_grid,list_width-1,current_height,2,list_height);
+=======
+			
+>>>>>>> origin/master
 			this->attach(*right_list,list_width+1,current_height,list_width-1,list_height);
 			
 			
@@ -99,16 +121,27 @@ class MainWindowContent_FileManager:public Gtk::Grid{
 		gint get_height(){
 			return current_height;
 		}
+<<<<<<< HEAD
 		
+=======
+>>>>>>> origin/master
 		~MainWindowContent_FileManager(){
 			delete this->load_left_command_button;
 			delete this->load_right_command_button;
 			delete this->left_list;
 			delete this->right_list;
+<<<<<<< HEAD
 			delete this->actions_grid;
 		}
 };
 
+=======
+		}
+};
+
+
+
+>>>>>>> origin/master
 class MainWindow:public Gtk::Window{
 	protected:
 		Gtk::Grid main_box;
@@ -129,13 +162,21 @@ class MainWindow:public Gtk::Window{
 		~MainWindow(){
 		}
 };
+<<<<<<< HEAD
 //
+=======
+
+>>>>>>> origin/master
 
 
 
 int main(int argc,char **argv)
 {
 	auto app=Gtk::Application::create(argc, argv,"manager.file");
+<<<<<<< HEAD
+=======
+	
+>>>>>>> origin/master
     MainWindow window;
     window.show_all();
     return app->run(window);

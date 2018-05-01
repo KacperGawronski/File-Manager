@@ -51,6 +51,15 @@ class FileSystemEntriesView:public Gtk::ScrolledWindow{
 		Glib::RefPtr<Gtk::ListStore>m_refTreeModel;
 		Gtk::Entry *entry;
 		
+<<<<<<< HEAD
+=======
+		/*
+		get_list_from_gtk_entry uses get_list_from_path with entry's text value.
+		get_list_from_path makes list from OS_SPECIFIC_FILESYSTEM_ENTRY_TYPE (children class of abstract FilesystemEntry) objects described in filesystem_management.h
+		by adding rows to tree view from OS_SPECIFIC_FILESYSTEM_ENTRY_TYPE's data in format described by model_columns.
+		OS_SPECIFIC_FILESYSTEM_ENTRY_TYPE class is OS-dependant
+		*/
+>>>>>>> origin/master
 		void get_list_from_path(std::string path);
 		void add_row(OS_SPECIFIC_FILESYSTEM_ENTRY_TYPE *file);
 		void add_row(std::string path);
@@ -64,6 +73,10 @@ class FileSystemEntriesView:public Gtk::ScrolledWindow{
 		
 		void get_list_from_gtk_entry();
 		
+<<<<<<< HEAD
+=======
+		//
+>>>>>>> origin/master
 		FileSystemEntriesView(Gtk::Entry *entry);
 		
 		~FileSystemEntriesView();
