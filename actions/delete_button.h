@@ -5,11 +5,8 @@
 #include "action_button.h"
 namespace actions{
 	class DeleteButton:public actions::ActionButton{
-		private:
-			FileSystemEntriesView  *left_view,*right_view;
-			Gtk::Entry *left_path_entry,*right_path_entry;
 		public:
-			DeleteButton(Gtk::Entry &left_path, Gtk::Entry &right_path,FileSystemEntriesView &left,FileSystemEntriesView &right);
+			DeleteButton(ACTION_BUTTON_CONSTRUCTOR_LONG_ARGS);
 	};
 }
 

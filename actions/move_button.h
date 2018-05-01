@@ -6,7 +6,7 @@
 namespace actions{
 	class MoveButton:public actions::ActionButton{
 		public:
-			MoveButton(Gtk::Entry &left_path, Gtk::Entry &right_path,FileSystemEntriesView &left,FileSystemEntriesView &right);
+			MoveButton(ACTION_BUTTON_CONSTRUCTOR_LONG_ARGS);
 	};
 }
 

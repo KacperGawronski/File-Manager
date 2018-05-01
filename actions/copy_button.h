@@ -7,7 +7,7 @@ namespace actions{
 	class CopyButton:public actions::ActionButton{
 		
 		public:
-			CopyButton(Gtk::Entry &left_path, Gtk::Entry &right_path,FileSystemEntriesView &left,FileSystemEntriesView &right);
+			CopyButton(ACTION_BUTTON_CONSTRUCTOR_LONG_ARGS);
 	};
 }
 

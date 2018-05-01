@@ -21,19 +21,21 @@
 
 /*version for linux using struct stat*/
 #define OS_INFO_TYPE struct stat
-
-
 #include <string>
 #include <vector>
 #include <cstring>
 #include <iostream>
 #include "filesystem_management.h"
-namespace FilesystemManagement{
+#ifdef __linux__
 	#include <sys/types.h>
 	#include <sys/stat.h>
 	#include <dirent.h>
 	#include <time.h>
 	#include <libgen.h>
+#endif
+
+namespace FilesystemManagement{
+#ifdef __linux__
 	FILESYSTEM_ENTRY_TYPE::FILESYSTEM_ENTRY_TYPE(std::string path,struct stat *OS_info){
 		this->OS_info=OS_info;
 			this->path=path;
@@ -118,7 +120,9 @@ namespace FilesystemManagement{
 		};
 		return std::string(perm);
 	}
-	
+#else
+#error Not implemented
+#endif
 	
 	
 	std::string FILESYSTEM_ENTRY_TYPE::get_path(){

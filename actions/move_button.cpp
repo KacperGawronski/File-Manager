@@ -5,6 +5,6 @@ Gtk::Entry *left_path_entry,*right_path_entry;
 */
 
 
-actions::MoveButton::MoveButton(Gtk::Entry &left_path, Gtk::Entry &right_path,FileSystemEntriesView &left,FileSystemEntriesView &right):ActionButton(left_path,right_path,left,right){
+actions::MoveButton::MoveButton(ACTION_BUTTON_CONSTRUCTOR_LONG_ARGS):ActionButton(ACTION_BUTTON_SHORT_ARGS){
 	this->set_label("Move");
 }

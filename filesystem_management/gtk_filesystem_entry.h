@@ -26,45 +26,34 @@
 #include <vector>
 #include <string>
 
-//
-#define OS_SPECIFIC_FILESYSTEM_ENTRY_TYPE FilesystemManagement::LinuxFilesystemEntry
 
-class ModelColumns : public Gtk::TreeModelColumnRecord
-{
-public:
-	Gtk::TreeModelColumn<Glib::ustring>entry_type;
-	Gtk::TreeModelColumn<Glib::ustring>entry_name;
-	Gtk::TreeModelColumn<Glib::ustring>permissions;
-	Gtk::TreeModelColumn<gint>uid;
-	Gtk::TreeModelColumn<gint>gid;
-	Gtk::TreeModelColumn<gint>size;
-	Gtk::TreeModelColumn<gint>nlinks;
-	Gtk::TreeModelColumn<Glib::ustring>modification_date;
-	
-	ModelColumns();
-};
+#ifdef __linux__
+#define OS_SPECIFIC_FILESYSTEM_ENTRY_TYPE FilesystemManagement::LinuxFilesystemEntry
+#include "linux/columns_model.h"
+#else
+#error Not implemented
+#endif
+
 
 
 
 class FileSystemEntriesView:public Gtk::ScrolledWindow{
 	private:
 		Glib::RefPtr<Gtk::ListStore>m_refTreeModel;
-		Gtk::Entry *entry;
 		
-<<<<<<< HEAD
-=======
 		/*
 		get_list_from_gtk_entry uses get_list_from_path with entry's text value.
 		get_list_from_path makes list from OS_SPECIFIC_FILESYSTEM_ENTRY_TYPE (children class of abstract FilesystemEntry) objects described in filesystem_management.h
 		by adding rows to tree view from OS_SPECIFIC_FILESYSTEM_ENTRY_TYPE's data in format described by model_columns.
 		OS_SPECIFIC_FILESYSTEM_ENTRY_TYPE class is OS-dependant
 		*/
->>>>>>> origin/master
 		void get_list_from_path(std::string path);
 		void add_row(OS_SPECIFIC_FILESYSTEM_ENTRY_TYPE *file);
 		void add_row(std::string path);
 		
 	public:
+	
+		Gtk::Entry *entry;
 		Gtk::TreeView *tree_view;
 		
 		ModelColumns *model_columns;
@@ -73,10 +62,6 @@ class FileSystemEntriesView:public Gtk::ScrolledWindow{
 		
 		void get_list_from_gtk_entry();
 		
-<<<<<<< HEAD
-=======
-		//
->>>>>>> origin/master
 		FileSystemEntriesView(Gtk::Entry *entry);
 		
 		~FileSystemEntriesView();

@@ -1,4 +1,5 @@
 shell_usage.o: command_handling/shell_usage.h \
  command_handling/../filesystem_management/gtk_filesystem_entry.h \
  command_handling/../filesystem_management/filesystem_management.h \
- command_handling/../filesystem_management/filesystem_abstract_class.h
+ command_handling/../filesystem_management/filesystem_abstract_class.h \
+ command_handling/../filesystem_management/linux/columns_model.h
