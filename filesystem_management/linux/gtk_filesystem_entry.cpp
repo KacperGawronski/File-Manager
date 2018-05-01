@@ -18,25 +18,12 @@
     along with File-Manager.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-
-#include "filesystem_management.h"
 #include <gtkmm-3.0/gtkmm.h>
 #include <vector>
 #include <string>
-#include "gtk_filesystem_entry.h"
+#include "../gtk_filesystem_entry.h"
 
 	
-ModelColumns::ModelColumns(){
-	add(entry_type);
-	add(entry_name);
-	add(permissions);
-	add(nlinks);
-	add(gid);
-	add(uid);
-	add(size);
-	add(modification_date);
-}
-
 
 void FileSystemEntriesView::get_list_from_path(std::string path){
 		m_refTreeModel->clear();
@@ -62,7 +49,6 @@ void FileSystemEntriesView::add_row(OS_SPECIFIC_FILESYSTEM_ENTRY_TYPE *file){
 	
 	
 	this->show_all_children();
-	
 }
 void FileSystemEntriesView::add_row(std::string path){
 	OS_SPECIFIC_FILESYSTEM_ENTRY_TYPE file(path);

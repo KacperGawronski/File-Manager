@@ -21,7 +21,6 @@
 
 #ifndef GTK_FILESYSTEM_ENTRY_H
 #define GTK_FILESYSTEM_ENTRY_H
-#include "filesystem_management.h"
 #include <gtkmm-3.0/gtkmm.h>
 #include <vector>
 #include <string>
@@ -29,7 +28,7 @@
 
 #ifdef __linux__
 #define OS_SPECIFIC_FILESYSTEM_ENTRY_TYPE FilesystemManagement::LinuxFilesystemEntry
-#include "linux/columns_model.h"
+#include "linux/linux_includes.h"
 #else
 #error Not implemented
 #endif

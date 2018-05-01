@@ -17,8 +17,11 @@
     You should have received a copy of the GNU General Public License
     along with File-Manager.  If not, see <http://www.gnu.org/licenses/>.
 */
-//
-
+#ifdef __linux__
+#warning Linux version implemented
+#else
+#error Your OS is not supported
+#endif
 #include <iostream>
 #include <gtkmm-3.0/gtkmm.h>
 #include <string>
@@ -26,8 +29,6 @@
 #include "command_handling/command_button.h"
 #include "command_handling/command_text_view.h"
 #include "actions/actions_grid.h"
-
-#warning Currently works only under GNU/Linux OS. Require __linux__ to be defined before preprocessing.
 
 class MainWindowContent_FileManager:public Gtk::Grid{
 	private:

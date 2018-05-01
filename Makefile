@@ -1,5 +1,5 @@
 CPPSTATIC=$(shell find -name "*.cpp"|sed 's/.cpp/.o/g'|sed 's/^\.\///g')
-HEADERS=$(shell find -name "*.h"|sed 's/\.\///g')
+HEADERS=$(shell find -name "*.h"|sed 's/^\.\///g')
 
 all:	target
 	g++ --std="c++14" $(shell pkg-config --cflags glibmm-2.4 gtkmm-3.0) -Bstatic $(CPPSTATIC) $(shell pkg-config --libs glibmm-2.4 gtkmm-3.0) -o main

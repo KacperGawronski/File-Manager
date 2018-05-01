@@ -26,16 +26,14 @@
 #include <vector>
 #include <cstring>
 #include <iostream>
-#include "filesystem_abstract_class.h"
-//
+#include "../filesystem_abstract_class.h"
+#ifdef __linux__
+	#include "linux_includes.h"
+	#define OS_INFO_TYPE struct stat
+
 namespace FilesystemManagement{
 	
 	#define FILESYSTEM_ENTRY_TYPE LinuxFilesystemEntry
-	#include <sys/types.h>
-	#include <sys/stat.h>
-	#include <dirent.h>
-	#include <time.h>
-	#include <libgen.h>
 	class FILESYSTEM_ENTRY_TYPE:public AbstractClasses::FilesystemEntry{
 		
 		private:
@@ -51,25 +49,25 @@ namespace FilesystemManagement{
 			
 			
 			~FILESYSTEM_ENTRY_TYPE();
-			
-			 std::string get_filesystem_entry_type();
-			
-			 int get_gid();
-			 int get_uid();
-			 int get_nlinks();
-			
-			 std::string get_modification_time();
-			
-			 int get_size();
-			
-			 std::string get_permissions();
-			 std::string get_path();
-			 /*LinuxFilesystemEntry*/void* get_parent();
-			 std::string get_parent_path();
-			 std::string get_name();
-						
-			 /*std::vector<LinuxFilesystemEntry*>*/void *get_children();			
+
+			std::string get_filesystem_entry_type();
+
+			int get_gid();
+			int get_uid();
+			int get_nlinks();
+
+			std::string get_modification_time();
+
+			int get_size();
+
+			std::string get_permissions();
+			std::string get_path();
+			/*LinuxFilesystemEntry*/void* get_parent();
+			std::string get_parent_path();
+			std::string get_name();
+			/*LinuxFilesystemEntry*/void *get_children();			
 		
 	};
 }
+#endif
 #endif

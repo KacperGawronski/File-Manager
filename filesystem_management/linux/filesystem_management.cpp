@@ -20,19 +20,11 @@
 
 
 /*version for linux using struct stat*/
-#define OS_INFO_TYPE struct stat
 #include <string>
 #include <vector>
 #include <cstring>
 #include <iostream>
 #include "filesystem_management.h"
-#ifdef __linux__
-	#include <sys/types.h>
-	#include <sys/stat.h>
-	#include <dirent.h>
-	#include <time.h>
-	#include <libgen.h>
-#endif
 
 namespace FilesystemManagement{
 #ifdef __linux__

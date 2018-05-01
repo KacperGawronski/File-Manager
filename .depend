@@ -1,5 +1,8 @@
-shell_usage.o: command_handling/shell_usage.h \
- command_handling/../filesystem_management/gtk_filesystem_entry.h \
- command_handling/../filesystem_management/filesystem_management.h \
- command_handling/../filesystem_management/filesystem_abstract_class.h \
- command_handling/../filesystem_management/linux/columns_model.h
+delete_button.o: actions/delete_button.h \
+ actions/../filesystem_management/gtk_filesystem_entry.h \
+ actions/../filesystem_management/linux/linux_includes.h \
+ actions/../filesystem_management/linux/columns_model.h \
+ actions/../filesystem_management/linux/filesystem_management.h \
+ actions/../filesystem_management/linux/../filesystem_abstract_class.h \
+ actions/../filesystem_management/linux/linux_includes.h \
+ actions/action_button.h
