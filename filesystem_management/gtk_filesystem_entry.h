@@ -41,8 +41,6 @@
 #endif
 
 
-
-
 class FileSystemEntriesView:public Gtk::ScrolledWindow{
 	private:
 		Glib::RefPtr<Gtk::ListStore>m_refTreeModel;
