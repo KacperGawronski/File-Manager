@@ -6,9 +6,9 @@
 #include "delete_button.h"
 class ActionsGrid:public Gtk::Grid{
 	private:
-		actions::MoveButton *move_button;
+		//actions::MoveButton *move_button;
 		actions::CopyButton *copy_button;
-		actions::DeleteButton *delete_button;
+		//actions::DeleteButton *delete_button;
 	public:
 		ActionsGrid(FileSystemEntriesView &left,FileSystemEntriesView &right);
 		

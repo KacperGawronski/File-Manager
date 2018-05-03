@@ -18,6 +18,7 @@
     along with File-Manager.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#ifdef __linux__
 #include <gtkmm-3.0/gtkmm.h>
 #include <vector>
 #include <string>
@@ -93,7 +94,8 @@ FileSystemEntriesView::FileSystemEntriesView(Gtk::Entry *entry){
 	if(pColumn)
 		pColumn->set_sort_column(model_columns->entry_name);
 	*/
-	Glib::RefPtr<Gtk::TreeSelection> refTreeSelection = tree_view->get_selection();
+	
+	Glib::RefPtr<Gtk::TreeSelection>refTreeSelection = tree_view->get_selection();
 	refTreeSelection->set_mode(Gtk::SELECTION_MULTIPLE);
 	
 	
@@ -109,8 +111,12 @@ FileSystemEntriesView::FileSystemEntriesView(Gtk::Entry *entry){
 	this->add(*tree_view);
 }
 		
-		
+Glib::RefPtr<Gtk::TreeSelection> FileSystemEntriesView::get_selection(){
+	return this->tree_view->get_selection();
+}
 FileSystemEntriesView::~FileSystemEntriesView(){
 	delete model_columns;
 	delete tree_view;
 }
+
+#endif

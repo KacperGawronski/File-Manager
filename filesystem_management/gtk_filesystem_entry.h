@@ -43,7 +43,6 @@
 
 class FileSystemEntriesView:public Gtk::ScrolledWindow{
 	private:
-		Glib::RefPtr<Gtk::ListStore>m_refTreeModel;
 		
 		/*
 		get_list_from_gtk_entry uses get_list_from_path with entry's text value.
@@ -54,14 +53,13 @@ class FileSystemEntriesView:public Gtk::ScrolledWindow{
 		void get_list_from_path(std::string path);
 		void add_row(OS_SPECIFIC_FILESYSTEM_ENTRY_TYPE *file);
 		void add_row(std::string path);
-		
-	public:
-	
-		Gtk::Entry *entry;
 		Gtk::TreeView *tree_view;
+	public:
+		Glib::RefPtr<Gtk::ListStore>m_refTreeModel;
 		
+		Gtk::Entry *entry;
 		ModelColumns *model_columns;
-		
+		Glib::RefPtr<Gtk::TreeSelection>get_selection();
 		
 		
 		void get_list_from_gtk_entry();

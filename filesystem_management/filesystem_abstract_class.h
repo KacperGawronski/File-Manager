@@ -21,10 +21,9 @@
 
 #ifndef FILESYSTEM_ABSTRACT_CLASS_H
 #define FILESYSTEM_ABSTRACT_CLASS_H
-//
+#include <string>
+#include <vector>
 namespace AbstractClasses{
-	#include <string>
-	#include <vector>
 	class FilesystemEntry{
 		protected:
 			std::string name;
